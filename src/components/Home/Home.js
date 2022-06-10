@@ -1,7 +1,20 @@
 import React from 'react';
 
-const Home = () => (
-    <h1>Home</h1>
-)
+import './home.scss'
+
+const Home = () => {
+
+
+    return (
+        <>
+        <div className="home-container">
+            <div className='home-container-foto'></div>
+            <h1>Witaj na mojej stronie!</h1>
+        </div>
+            
+        </>
+    )
+}
+
 
 export default Home;

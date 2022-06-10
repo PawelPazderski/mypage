@@ -1,0 +1,9 @@
+@import "../../scss/settings/variables";
+
+ul {
+    display: flex;
+    justify-content: center;
+    li {
+        min-width: 200px;
+    }
+}

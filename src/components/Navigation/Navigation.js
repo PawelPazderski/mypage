@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {NavLink} from 'react-router-dom';
 
+import "./navigation.scss"
+
 const MENU_URL = 'http://localhost:3001/menu';
 
 const Navigation = () => {
