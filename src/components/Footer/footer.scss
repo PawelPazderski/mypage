@@ -1,0 +1,14 @@
+.home-footer {
+    font-size: small;
+    color: darkgrey;
+    border-top: 1px solid lightgrey;
+    padding-top: 1em;
+    text-align: center;
+    margin-bottom: 25px;
+    p:before {
+        content:"\00a9";
+        margin-right: 3px;
+      }
+    
+
+}

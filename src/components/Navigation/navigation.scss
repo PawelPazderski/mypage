@@ -1,9 +1,140 @@
 @import "../../scss/settings/variables";
 
-ul {
+.top-nav {
+    margin-bottom: 2em;
     display: flex;
-    justify-content: center;
-    li {
-        min-width: 200px;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    color: black;
+    padding: 1.5em;
     }
-}
+
+    .menu {
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        li a {
+            color: black; 
+            text-transform: uppercase;
+            text-decoration: none;
+            &:hover {
+                color: $accent-color;
+            }
+        }    
+    }
+
+    .menu > li {
+        margin: 0 1rem;
+        overflow: hidden;
+        .active {
+            color:rgb(146, 143, 143);
+        }
+    }
+
+    .menu-button-container {
+        display: none;
+        height: 100%;
+        width: 30px;
+        cursor: pointer;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 1em;
+    }
+
+    #menu-toggle {
+    display: none;
+    }
+
+    .menu-button,
+    .menu-button::before,
+    .menu-button::after {
+        display: block;
+        background-color: black;
+        position: absolute;
+        height: 4px;
+        width: 30px;
+        transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+        border-radius: 2px;
+    }
+
+    .menu-button::before {
+    content: '';
+        margin-top: -8px;
+    }
+
+    .menu-button::after {
+    content: '';
+        margin-top: 8px;
+    }
+
+    #menu-toggle:checked + .menu-button-container .menu-button::before {
+        margin-top: 0px;
+        transform: rotate(405deg);
+    }
+
+    #menu-toggle:checked + .menu-button-container .menu-button {
+        background: rgba(255, 255, 255, 0);
+    }
+
+    #menu-toggle:checked + .menu-button-container .menu-button::after {
+        margin-top: 0px;
+        transform: rotate(-405deg);
+    }
+
+    @media (max-width: 960px) {
+    .menu-button-container {
+        display: flex;
+    }
+    .menu {
+        position: absolute;
+        top: 74px;
+        margin-top: 50px;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    #menu-toggle ~ .menu li {
+        height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    #menu-toggle:checked ~ .menu li {
+        border: 1px solid #333;
+        height: 2.5em;
+        padding: 0.5em;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .menu > li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0.5em 0;
+        width: 100%;
+        color: white;
+        background-color: rgb(41, 40, 40);
+        a {
+            color:white
+        }
+    }
+    .menu > li:not(:last-child) {
+        border-bottom: 1px solid #444;
+    }
+    }
+
+    .nav-logo {
+        background: url("logo-sygnet.png") no-repeat left/contain;
+        width: 5em;
+        height: 75px;
+        font-size: 2em;
+        font-weight: 600;
+    }

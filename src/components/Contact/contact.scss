@@ -1,0 +1,78 @@
+@import "../../scss/settings/variables";
+
+
+h1 {
+    font-size: 2em;
+    font-family: $font-base, sans-serif;
+    font-weight:600;
+    text-align: center;
+}
+
+.contact-container {
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    .contact-container-text {
+        text-align: center;
+    }
+    input {
+        border: none;
+        height: 2em;
+        min-width: 35vw;
+        border-bottom:1px solid black;
+        font-family: $font-base;
+        &:focus {
+            border-bottom:1px solid $accent-color;
+        }
+    }
+    label {
+        margin-top: 50px;
+        color: darkgrey;
+    }
+    textarea {
+        border: none;
+        min-width: 35vw;
+        border-bottom:1px solid black;
+        font-family: $font-base;
+        resize: none;
+        &:focus {
+            border-bottom:1px solid $accent-color;
+        }
+    }
+    
+}
+
+.contact-form {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.d-none {
+    display: none;
+}
+
+.contact-form-alert {
+    color: red;
+    margin-top: 5px;
+}
+
+.form-control-alert {
+    border-bottom: 1px solid red !important;
+}
+
+button {
+    margin-top: 2em;
+    width: 150px;
+    height: 50px;
+    align-self: center;
+    background-color: darkgrey;
+    border-radius: 25px;
+    border: 1px solid black
+}
+
+button:hover {
+    background-color: $accent-color;
+}
