@@ -1,0 +1,38 @@
+@import "../../scss/settings/variables";
+
+.portfolio-grafika-container {
+    padding-top: 40px;;
+    height: fit-content;
+}
+
+.carousel-item {
+    height: 65vh;
+    text-align: center;
+}
+
+.carousel-img {
+    height: 100%;
+    width: auto;
+    margin: 0 auto;
+}
+
+
+.grafika-list {
+    border: 1px solid red;
+}
+
+.carousel-caption {
+    color: black;
+}
+
+a [class^="carousel-control"] {
+    background-color: $accent-color;
+    border-radius: 5px;
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: $accent-color;
+    width: 20px;
+    border-radius: 5px;
+}
+    
