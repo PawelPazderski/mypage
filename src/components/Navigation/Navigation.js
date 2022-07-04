@@ -26,28 +26,17 @@ const Navigation = () => {
 
     ])
 
-    // useEffect(()=>{
-    //     fetch(MENU_URL)
-    //         .then(res => {
-    //             if(res.ok) {
-    //                 return res.json()
-    //             }
-    //             window.alert("Błąd")
-    //         })
-    //         .then(menuItems => setMenuItems(menuItems))
-    // },[])
 
     return (
         <>
         <section className='top-nav'>
-            <div className='nav-logo'>
-            </div>
+            <a href="/" className='nav-logo'></a>
             <input id="menu-toggle" type="checkbox"  />
             <label className='menu-button-container' htmlFor="menu-toggle">
             <div className='menu-button'></div>
             </label>
             <ul className='menu'>
-            {menuItems.map(item => (
+                {menuItems.map(item => (
                     <li key={item.id} onClick={e => e.target.parentElement.parentElement.previousElementSibling.previousElementSibling.checked = false}>
                         <NavLink to={item.link} activeclassname="active">
                             {item.name}

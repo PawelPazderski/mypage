@@ -7,11 +7,24 @@ import { getDatabase, ref, child, get } from "firebase/database";
 
 
 import Carousel from 'react-bootstrap/Carousel'
+import Spinner from 'react-bootstrap/Spinner'
+
+import Carousel_graphics from './Carousel_graphics';
 
 import './portfolio_grafika.scss'
 
 const Portfolio_grafika = () => {
     const [listItems, setListItems] = useState([])
+    const [isDesktop, setDesktop] = useState(window.innerWidth > 960);
+
+    const updateMedia = () => {
+        setDesktop(window.innerWidth > 960);
+    };
+
+    useEffect(() => {
+        window.addEventListener("resize", updateMedia);
+        return () => window.removeEventListener("resize", updateMedia);
+    });
 
 
     useEffect(() => {
@@ -32,28 +45,8 @@ const Portfolio_grafika = () => {
         <>
         <div className='portfolio-grafika-container'>
             <h1>Grafika</h1>
-            <div className='grafika-images'>
-                {listItems.length
-                ?
-                <Carousel>
-                    {listItems.map((item) => {
-                    return <Carousel.Item>
-                        <img
-                        className="carousel-img"
-                        src={item.url}
-                        alt={item.title}
-                        />
-                        <Carousel.Caption>
-                        <h5>{item.title}</h5>
-                        {/* <p>{item.title}</p> */}
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                })}
-                </Carousel>
-                
-                :
-                <h2>Loading...</h2>
-            }
+            <div>
+            <Carousel_graphics listItems={listItems} isDesktop={isDesktop}/>
             </div>
         </div>
         </>

@@ -1,0 +1,36 @@
+@import "../../scss/settings/variables";
+
+.react-images {
+    height: fit-content
+}
+
+
+
+.gallery-react-item-container {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    hr {
+        opacity: 0.5;
+        color: $accent-color;
+        height: 3px;
+        width:50%;
+        margin-bottom: 50px;
+    }
+}
+
+li:last-child .gallery-react-item-container hr {
+    display: none;
+}
+
+.react-images ul {
+    padding: 0px 10px;
+}
+
+.gallery-carousel-video {
+    margin-bottom: 30px;
+}
+
