@@ -37,10 +37,13 @@ const Navigation = () => {
             </label>
             <ul className='menu'>
                 {menuItems.map(item => (
-                    <li key={item.id} onClick={e => e.target.parentElement.parentElement.previousElementSibling.previousElementSibling.checked = false}>
-                        <NavLink to={item.link} activeclassname="active">
+                    <li key={item.id}>
+                        <NavLink 
+                            to={item.link} activeclassname="active"
+                            onClick={e => e.target.parentElement.parentElement.previousElementSibling.previousElementSibling.checked = false}
+                            >
                             {item.name}
-                            </NavLink>
+                        </NavLink>
                     </li>
                 ))}
             </ul>

@@ -19,7 +19,7 @@ const Portfolio_react = () => {
     useEffect(() => {
         window.addEventListener("resize", updateMedia);
         return () => window.removeEventListener("resize", updateMedia);
-    });
+    },[]);
 
     useEffect(() => {
         const dbRef = ref(getDatabase());
@@ -32,7 +32,7 @@ const Portfolio_react = () => {
             }).catch((error) => {
             console.error(error);
             });
-    }, [])
+    },[isDesktop])
     
 
     return (

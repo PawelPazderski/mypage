@@ -2,11 +2,16 @@
 
 .portfolio-grafika-container {
     padding-top: 40px;
+    margin: 0 auto;
     // text-align: center;
     height: fit-content;
     h1 {
         margin-bottom: 0;
     }
+}
+
+.grafika-images ul {
+    padding: 0;
 }
 
 .grafika-list {

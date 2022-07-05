@@ -11,6 +11,8 @@ const Contact = () => {
     const [emailErr, setEmailErr] = useState(false)
     const [msg, setMsg] = useState("")
     const [msgErr, setMsgErr] = useState(false)
+    const [agreed, setAgreed] = useState(false)
+    const [agreeErr, setAgreeErr] = useState(false)
     const [sendSuccess, setSendSuccess] = useState(false)
 
     const form = useRef()
@@ -70,8 +72,18 @@ const Contact = () => {
                 }
         }
 
+    const handleCheckAgree = (e) => {
+        if (e.target.checked) {
+            setAgreed(true)
+            setAgreeErr(false)
+        } else {
+            setAgreed(false)
+        }
+    }
+
     const sendEmail = (e) => {
         e.preventDefault();
+
         if(!msgFrom.length) {
             setMsgFromErr(true)
         }
@@ -84,8 +96,12 @@ const Contact = () => {
             setMsgErr(true)
         }
 
-        if (!msgFromErr && !emailErr && !msgErr && msgFrom.length && email.length && msg.length) {
-            console.log(form.current)
+        if (!agreed) {
+            setAgreeErr(true)
+        }
+
+        if (!msgFromErr && !emailErr && !msgErr && !agreeErr && msgFrom.length && email.length && msg.length && agreed) {
+            // console.log(form.current)
             emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
         .then((result) => {
             console.log(result.text, "message sent");
@@ -101,6 +117,7 @@ const Contact = () => {
         setMsgFrom("")
         setEmail("")
         setMsg("")
+        setAgreed(false)
     }
 
     return (
@@ -175,6 +192,29 @@ const Contact = () => {
                             }>
                                 Wiadomość musi składać się z conajmniej 20 znaków!
                             </h6>
+                            <div className='agree-box'>
+                                
+                                <input
+                                    type="checkbox"
+                                    id="agreement-input"
+                                    onChange={handleCheckAgree}
+                                    >
+                                </input>
+                                <span className="checkmark"></span>
+                                <label>Wyrażam zgodę na przetwarzanie danych wpisanych w formularzu w celu udzielenia odpowiedzi na przesłane zapytanie.</label>
+                                
+                            </div>
+                            <h6  
+                                className={ 
+                                agreeErr 
+                                ? 
+                                "contact-form-alert" 
+                                : 
+                                "contact-form-alert d-none"
+                            }>
+                                Aby otrzymać odpowiedź potrzebna jest Twoja zgoda na przetwarzanie danych!
+                            </h6>
+                            
                             <button type="submit">Wyślij</button>
             </form>
             }

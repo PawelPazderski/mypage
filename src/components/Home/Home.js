@@ -18,7 +18,7 @@ const Home = () => {
 
                 <p>W ostatnim czasie w poszukiwaniu nowych wyzwań i zaspokojenia chęci rozwoju zdecydowałem się na kurs Frontend Developer - React. Efekty tego kursu można zobaczyć na tej stronie, jak też w kilku projektach w dziale portfolio. Przede mną jeszcze z pewnością sporo nauki, ale tej się nie boję. Wiem, że to moja droga na przyszłość.</p>
 
-                <p className='strong-text'>Zapraszam serdecznie do obejrzenia moich prac i kontaktu.</p>
+                <a href="./portfolio" className='strong-text'>Zapraszam serdecznie do obejrzenia moich prac i kontaktu.</a>
             </div>
         </div>
         </>

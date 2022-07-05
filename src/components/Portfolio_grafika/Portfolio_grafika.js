@@ -24,7 +24,7 @@ const Portfolio_grafika = () => {
     useEffect(() => {
         window.addEventListener("resize", updateMedia);
         return () => window.removeEventListener("resize", updateMedia);
-    });
+    },[isDesktop]);
 
 
     useEffect(() => {

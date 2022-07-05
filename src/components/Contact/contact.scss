@@ -9,18 +9,21 @@ h1 {
 }
 
 .contact-container {
-    height: 75vh;
+    margin: 0 auto;
+    height: fit-content;
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    margin-bottom: 60px;
     .contact-container-text {
         text-align: center;
     }
     input {
         border: none;
         height: 2em;
-        min-width: 35vw;
+        // min-width: 35vw;
         border-bottom:1px solid black;
         font-family: $font-base;
         &:focus {
@@ -75,4 +78,71 @@ button {
 
 button:hover {
     background-color: $accent-color;
+}
+
+.agree-box {
+    // border: 1px solid red;
+    display: flex;
+    margin-top: 15px;
+    position: relative;
+    // justify-content: space-between;
+    // align-items: flex-start;
+
+}
+
+.agree-box input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+    z-index: 3;
+    }
+
+.agree-box label {
+    // border: 1px solid red;
+    margin-top: 0;
+    margin-left: 35px;
+    font-size: 0.8em;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 50%;
+    
+    }
+
+.agree-box:hover input ~ .checkmark {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.agree-box input:checked ~ .checkmark {
+    background-color: $accent-color;
+    }
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.agree-box input:checked ~ .checkmark:after {
+    display: block;
+    }
+
+.agree-box .checkmark:after {
+        left: 9px;
+        top: 5px;
+        width: 7px;
+        height: 12px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
 }
