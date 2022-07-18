@@ -1,12 +1,12 @@
 @import "../../scss/settings/variables";
 
-
-
 h1 {
     font-size: 2em;
     font-family: $font-base, sans-serif;
     font-weight:600;
     margin-bottom: 1em;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 p {

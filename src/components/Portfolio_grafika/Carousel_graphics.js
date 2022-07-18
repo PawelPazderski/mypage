@@ -27,7 +27,7 @@ const Carousel_graphics = ({listItems, isDesktop}) => {
                             />
                         </div>
                         <Carousel.Caption>
-                        <h5>{item.title}</h5>
+                        <h5 className="carousel-graphics-title">{item.title}</h5>
                         {/* <p>{item.title}</p> */}
                         </Carousel.Caption>
                     </Carousel.Item>

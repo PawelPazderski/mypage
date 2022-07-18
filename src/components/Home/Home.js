@@ -8,6 +8,7 @@ const Home = () => {
     return (
         <>
         <div className="home-container">
+            
             <div className='home-container-foto'></div>
             <div className='home-container-text'>
                 <h1>Witaj na mojej stronie!</h1>

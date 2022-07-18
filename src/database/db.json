@@ -71,17 +71,34 @@
         {
             "id": 1,
             "title": "Strona portfolio",
+            "technologies":"React, React Rooter, React Bootstrap, Sass, EmailJS, Firebase Database & Storage",
+            "link": "https://github.com/PawelPazderski/mypage",
+            "page": "/",
             "url": "https://firebasestorage.googleapis.com/v0/b/pawelpazderski-mypage.appspot.com/o/video%2Fmypage.mp4?alt=media&token=f2c8ac8e-0261-4de1-91c5-ec07d6bfc41b"
         },
         {
             "id": 2,
-            "title": "Hand It Over",
+            "title": "Hand It Over - desktop",
+            "technologies":"React, React Rooter, React Bootstrap, Styled Components, Sass, Firebase Database & Authentification",
+            "link": "https://github.com/PawelPazderski/HAND_IT_OVER",
+            "page": "https://handitover-52b63.web.app/",
             "url": "https://firebasestorage.googleapis.com/v0/b/pawelpazderski-mypage.appspot.com/o/video%2Fhand_it_over.mp4?alt=media&token=53def7ee-ef9c-415d-ac74-e3474875eeb4"
         },
         {
             "id": 3,
             "title": "Chuck Attack",
-            "url": "https://firebasestorage.googleapis.com/v0/b/pawelpazderski-mypage.appspot.com/o/video%2Fchuck_attack.mp4?alt=media&token=039bc86d-c67a-4ad2-864a-8d6df6fba2ff"
+            "technologies":"React, React Rooter, React Bootstrap, Styled Components, Sass, Firebase Database, Fetch, API",
+            "link": "https://github.com/PawelPazderski/CHUCK_ATTACK_PP_koncowy",
+            "page": "https://chuckattack.web.app/",
+            "url": "https://firebasestorage.googleapis.com/v0/b/pawelpazderski-mypage.appspot.com/o/video%2Fchuck_attack.mp4?alt=media&token=31d82b88-f1f3-4636-a9be-57f2237c8b95"
+        },
+        {
+            "id": 4,
+            "title": "Quiz Me Baby",
+            "technologies":"React, React Rooter, React Bootstrap, Sass, Fetch, API", 
+            "link": "https://github.com/PawelPazderski/QUIZ_ME_BABY",
+            "page": "https://quiz-me-baby.web.app/",
+            "url": "https://firebasestorage.googleapis.com/v0/b/pawelpazderski-mypage.appspot.com/o/video%2Fquiz_me_baby.mp4?alt=media&token=d213f2b7-4089-4c02-817b-915db8bf8241"
         }
     ]
 }

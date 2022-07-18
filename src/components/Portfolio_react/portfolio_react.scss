@@ -1,10 +1,14 @@
 @import "../../scss/settings/variables";
 
 .react-images {
-    height: fit-content
+    height: 70vh;
 }
 
-
+@media(max-width: 960px) {
+    .react-images {
+        height: fit-content;
+    }
+}
 
 .gallery-react-item-container {
     height: fit-content;
@@ -16,9 +20,9 @@
     hr {
         opacity: 0.5;
         color: $accent-color;
-        height: 3px;
-        width:50%;
-        margin-bottom: 50px;
+        height: 2px;
+        width: 50%;
+        margin-bottom: 30px;
     }
 }
 
@@ -32,5 +36,46 @@ li:last-child .gallery-react-item-container hr {
 
 .gallery-carousel-video {
     margin-bottom: 30px;
+}
+
+.carousel-title {
+    margin-bottom: 1rem;
+}
+
+h6 {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.4);
+    // line-height: 2em;
+    // margin-top: 5px;
+}
+
+.carousel {
+    height: 100%;
+}
+
+.carousel-caption {
+    padding-bottom: 0
+}
+
+.react-links {
+    margin-top:15px;
+}
+
+.portfolio-react-link {
+    padding: 5px 15px;
+    background-color: lightgrey;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    margin-left: 3px;
+    margin-right: 3px;
+    font-size: small;
+    border: 1px solid transparent;
+    &:hover {
+        color: $accent-color;
+        background-color: transparent;
+        border: 1px solid lightgrey;
+    }
+
 }
 
