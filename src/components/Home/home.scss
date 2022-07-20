@@ -30,7 +30,7 @@ p {
     }
     .home-container-text {
         text-align: center;
-        width: 65%;
+        width: 70%;
     }
     
 }
@@ -53,5 +53,14 @@ p {
         // color: $accent-color;
         // transition: 0.5s ease-in-out;
         animation: pulse 0.5s infinite alternate;
+    }
+}
+
+@media(max-width: 960px) {
+    .home-container .home-container-text {
+        width: 85%;
+    }
+    h1 {
+        margin-bottom: 0.5em;
     }
 }
