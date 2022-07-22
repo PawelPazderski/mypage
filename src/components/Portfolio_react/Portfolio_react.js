@@ -59,7 +59,7 @@ const Portfolio_react = () => {
                                 
                                 <h6>{item.technologies}</h6>
                                 <div className="react-links">
-                                    <a className="portfolio-react-link" target="_blank" rel="noreferrer" href={item.page}>Strona</a>
+                                    { (!item.title.includes('desktop')) && <a className="portfolio-react-link" target="_blank" rel="noreferrer" href={item.page}>Strona</a>}
                                     <a className="portfolio-react-link" target="_blank" rel="noreferrer" href={item.link}>Kod</a>
                                 </div>
                                 <hr/>
