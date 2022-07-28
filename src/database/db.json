@@ -63,6 +63,11 @@
             "id": 9,
             "title": "Fotomanipulacja",
             "url": "https://firebasestorage.googleapis.com/v0/b/pawelpazderski-mypage.appspot.com/o/images%2Ffotomanipulacja.jpg?alt=media&token=8cc7f7a2-d76d-42ee-9321-e1c8d2d89c90"
+        },
+        {
+            "id": 10,
+            "title": "Współpraca",
+            "url": "https://firebasestorage.googleapis.com/v0/b/pawelpazderski-mypage.appspot.com/o/images%2Ffirmy_wspolpraca.jpg?alt=media&token=1394d1ea-166d-49fc-92c2-27670eb3dcf1"
         }
         
     ],
@@ -110,4 +115,6 @@
         }
     ]
 }
+
+
 

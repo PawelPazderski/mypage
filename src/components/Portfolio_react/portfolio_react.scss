@@ -59,20 +59,26 @@ h6 {
 
 .react-links {
     margin-top:15px;
+    display: flex;
+    justify-content: center;
 }
 
 .portfolio-react-link {
-    padding: 5px 15px;
+    padding: 2px 15px;
     background-color: lightgrey;
-    border-radius: 4px;
-    color: white;
-    text-decoration: none;
+    width: 80px;
+    border-radius: 30px;
     margin-left: 3px;
     margin-right: 3px;
     font-size: small;
     border: 1px solid transparent;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    line-height: 2em;
     &:hover {
         color: $accent-color;
+        cursor: pointer;
         background-color: transparent;
         border: 1px solid lightgrey;
     }
