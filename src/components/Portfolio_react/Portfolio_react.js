@@ -47,7 +47,7 @@ const Portfolio_react = () => {
                 {reactItems.map((item) => {
                     return <li key={item.id}>
                             <div className="gallery-react-item-container">
-                            <h5>{item.title}</h5>
+                            <span className="gallery-react-item-title">{item.title}</span>
                                 <video
                                     className="carousel-video gallery-carousel-video"
                                     width="750"

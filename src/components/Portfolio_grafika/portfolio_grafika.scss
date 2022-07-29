@@ -1,17 +1,10 @@
 @import "../../scss/settings/variables";
 
 .portfolio-grafika-container {
-    padding-top: 40px;
+    // padding-top: 40px;
     margin: 0 auto;
     // text-align: center;
     height: fit-content;
-    h1 {
-        margin-bottom: 0;
-    }
-}
-
-.carousel-graphics-title{
-    margin-bottom: 1.5em;
 }
 
 .grafika-images ul {
@@ -48,6 +41,10 @@ a [class^="carousel-control"] {
     align-items: center;
 }
 
+.carousel-cooperation-img {
+    width: 80%;
+}
+
 
 .carousel-item {
         height: 65vh;
@@ -62,6 +59,10 @@ a [class^="carousel-control"] {
         justify-content: center;
         align-items: center;
         text-align: center;
+        .gallery-item-title {
+            font-weight: 500;
+            margin-top: 0.5em
+        }
         .gallery-img {
             width: 80%;
             height: auto;

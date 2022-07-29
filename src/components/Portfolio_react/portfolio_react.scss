@@ -16,7 +16,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+    .gallery-react-item-title {
+        font-weight: 500;
+        // margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
     hr {
         opacity: 0.5;
         color: $accent-color;
@@ -47,6 +51,12 @@ h6 {
     color: rgba(0, 0, 0, 0.4);
     // line-height: 2em;
     // margin-top: 5px;
+}
+
+@media(max-width: 960px) {
+    h6 {
+    font-size: 0.8em;
+    }
 }
 
 .carousel {

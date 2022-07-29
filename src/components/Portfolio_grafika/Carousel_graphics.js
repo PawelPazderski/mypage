@@ -15,21 +15,31 @@ const Carousel_graphics = ({listItems, isDesktop}) => {
         <div className='grafika-images'>
                 {(listItems.length && isDesktop) &&
                     <Carousel>
+                        
                     {listItems.map((item) => {
                     return <Carousel.Item key={item.id}>
-                        <span className="zoom-info">{ !hover ? "( Najedź na obraz, aby powiększyć )" : "" }</span>
+                        <h5 className="carousel-graphics-title">{item.title}</h5>
+                        {!item.title.includes('Współpraca') && <span className="zoom-info">{ !hover ? "( Najedź na obraz, aby powiększyć )" : "" }</span>}
                         <div className="carousel-img" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+                            {item.title.includes('Współpraca') 
+                            ?
+                            <img
+                                className="carousel-cooperation-img"
+                                src={item.url}
+                                alt={item.title}
+                            />    
+                            :
                             <Zoom 
                                 img={item.url}
                                 zoomScale={2.5}
                                 height={500}
                                 width={900}
                             />
+                            }
                         </div>
-                        <Carousel.Caption>
-                        <h5 className="carousel-graphics-title">{item.title}</h5>
-                        {/* <p>{item.title}</p> */}
-                        </Carousel.Caption>
+                        {/* <Carousel.Caption>
+                            <h5 className="carousel-graphics-title">{item.title}</h5>
+                        </Carousel.Caption> */}
                     </Carousel.Item>
                 })}
                 </Carousel>
@@ -39,13 +49,15 @@ const Carousel_graphics = ({listItems, isDesktop}) => {
                     <ul>
                         {listItems.map((item) => {
                             return <li key={item.id}>
+                                
                                 <div className="gallery-item-container">
+                                <span className="gallery-item-title">{item.title}</span>
                                     <img
                                         className="gallery-img"
                                         src={item.url}
                                         alt={item.title}
                                         />
-                                    <h5>{item.title}</h5>
+                                    
                                     <hr/>
 
                                 </div>
