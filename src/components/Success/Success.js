@@ -8,8 +8,8 @@ const Success = () => {
     return (
         <>
         <div className='success-container'>
-            <h1>Wiadomość wysłana pomyślnie.</h1>
-            <h1>Dziękuję.</h1>
+            <h2>Wiadomość wysłana pomyślnie.</h2>
+            <h2>Dziękuję.</h2>
             <NavLink className="success-link" to="/">Strona główna</NavLink>
         </div>
         </>

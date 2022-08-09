@@ -35,7 +35,7 @@ const Portfolio_react = () => {
     return (
         <>
         <div className='portfolio-react-container'>
-            <h1>React</h1>
+            <h2>React</h2>
             <div className='react-images'>
             {(reactItems.length && isDesktop) 
             &&
