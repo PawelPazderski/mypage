@@ -6,7 +6,7 @@ import { getDatabase, ref, child, get } from "firebase/database";
 import Carousel_react from './Carousel_react';
 
 const Portfolio_react = () => {
-    const [reactItems, setReactItems] = useState([])
+    const [reactItems, setReactItems] = useState(null)
     const [isDesktop, setDesktop] = useState(window.innerWidth > 960);
 
     const updateMedia = () => {
@@ -37,11 +37,11 @@ const Portfolio_react = () => {
         <div className='portfolio-react-container'>
             <h2>React</h2>
             <div className='react-images'>
-            {(reactItems.length && isDesktop) 
+            {(reactItems && isDesktop) 
             &&
             <Carousel_react reactItems={reactItems} isDesktop={isDesktop}/>
             }
-            {(reactItems.length && !isDesktop) 
+            {(reactItems && !isDesktop) 
             &&
             <ul>
                 {reactItems.map((item) => {
@@ -69,7 +69,7 @@ const Portfolio_react = () => {
                 </ul>
             }
 
-            {(!reactItems.length) &&
+            {(!reactItems) &&
                 <div className="spinner-container">
                     <Spinner animation="border" role="status">
                         <span className="visually-hidden">Loading...</span>

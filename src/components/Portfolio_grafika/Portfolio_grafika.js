@@ -14,7 +14,7 @@ import Carousel_graphics from './Carousel_graphics';
 import './portfolio_grafika.scss'
 
 const Portfolio_grafika = () => {
-    const [listItems, setListItems] = useState([])
+    const [listItems, setListItems] = useState(null)
     const [isDesktop, setDesktop] = useState(window.innerWidth > 960);
 
     const updateMedia = () => {

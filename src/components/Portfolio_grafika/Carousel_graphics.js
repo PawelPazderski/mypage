@@ -13,7 +13,7 @@ const Carousel_graphics = ({listItems, isDesktop}) => {
     return (
         <>
         <div className='grafika-images'>
-                {(listItems.length && isDesktop) &&
+                {(listItems && isDesktop) &&
                     <Carousel>
                         
                     {listItems.map((item) => {
@@ -45,7 +45,7 @@ const Carousel_graphics = ({listItems, isDesktop}) => {
                 </Carousel>
                 
                 }
-                {(listItems.length && !isDesktop) &&
+                {(listItems && !isDesktop) &&
                     <ul>
                         {listItems.map((item) => {
                             return <li key={item.id}>
@@ -65,7 +65,7 @@ const Carousel_graphics = ({listItems, isDesktop}) => {
                         })}
                     </ul>
                 }
-                {(!listItems.length) &&
+                {(!listItems) &&
                     <div className="spinner-container">
                         <Spinner animation="border" role="status">
                             <span className="visually-hidden">Loading...</span>
