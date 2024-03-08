@@ -9,6 +9,10 @@ h1 {
     padding-right: 10px;
 }
 
+a {
+    color: black
+}
+
 p {
     line-height: 1.5em;
 }
@@ -22,7 +26,7 @@ p {
     align-items: center;
     margin-bottom: 50px;
     .home-container-foto {
-        background: url("pp_foto.png") no-repeat center/cover;
+        background: url("pp_jc_foto.jpg") no-repeat center/cover;
         height: 170px;
         width: 170px;
         border-radius: 50%;

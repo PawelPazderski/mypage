@@ -1,7 +1,7 @@
 import React, {useState, useRef} from 'react';
+import { z } from 'zod';
 import Success from "./../Success"
 import emailjs from '@emailjs/browser';
-import {SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY} from '../../emailkey';
 import './contact.scss'
 
 const Contact = () => {
@@ -40,21 +40,38 @@ const Contact = () => {
                 }
     }
 
+    const schema = z.object({
+        email: z.string().email(), // Email validation
+        });
+
     const validateEmail = (e) => {
-        if (e.target.validity.patternMismatch) {
-            setEmailErr(true)
-        } else {
-                setEmailErr(false)
-                }
+        try {
+            // Parse the email value against the Zod schema
+            schema.parse({ email: e.target.value });
+            setEmailErr(false); // Clear any previous errors if validation succeeds
+            // console.log('Email is valid:', email);
+            // Here, you can proceed with sending the email or performing other actions
+            } catch (err) {
+                setEmailErr(true); // Display the validation error message
+                // console.error('Email validation error:', err.errors[0]);
+            }
+
     }
 
     const handleChangeEmail = (e) => {
-        const newValueIsValid = !e.target.validity.patternMismatch;
-
-        if (emailErr && newValueIsValid) {
-            setEmailErr(false);
-        }
         setEmail(e.target.value)
+        if(emailErr) {
+            try {
+                // Parse the email value against the Zod schema
+                schema.parse({ email: e.target.value });
+                setEmailErr(false); // Clear any previous errors if validation succeeds
+                console.log('Email is valid:', email);
+                // Here, you can proceed with sending the email or performing other actions
+                } catch (err) {
+                    setEmailErr(true); // Display the validation error message
+                    console.error('Email validation error:', err.errors[0]);
+                }
+        }
     }
 
     const handleChangeMsg = (e) => {
@@ -102,7 +119,7 @@ const Contact = () => {
 
         if (!msgFromErr && !emailErr && !msgErr && !agreeErr && msgFrom.length && email.length && msg.length && agreed) {
             // console.log(form.current)
-            emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+            emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_PUBLIC_KEY)
         .then((result) => {
             console.log(result.text, "message sent");
         }, (error) => {
@@ -131,12 +148,12 @@ const Contact = () => {
                         <h2>Napisz do mnie</h2>
                         <label>Imię</label>
                             <input
-                                name="user_name"
+                                name="name"
                                 type="text"
                                 value={msgFrom}
                                 className={ msgFromErr ? "form-control-alert" : null}
                                 onChange={handleChangeName}
-                                pattern="^\S{2,}$"
+                                pattern="^[\S ]{2,}$"
                                 onBlur={validateMsgFrom}
                                 onKeyPress={preventEnter}
                             />
@@ -152,14 +169,15 @@ const Contact = () => {
                             </h6>
                         <label>Email</label>
                             <input 
-                                name="user_email"
-                                type="text"
+                                name="email"
+                                type="email"
                                 value={email}
                                 className={ emailErr ? "form-control-alert" : null}
                                 onChange={handleChangeEmail}
                                 onBlur={validateEmail}
                                 onKeyPress={preventEnter}
-                                pattern='^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-z\-0-9]+\.)+[a-z]{2,}))$'
+                                // pattern='^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-z\-0-9]+\.)+[a-z]{2,}))$'
+                                // pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
                             />
                             <h6  
                                 className={ 
@@ -173,7 +191,7 @@ const Contact = () => {
                             </h6>
                             <label>Twoja wiadomość</label>
                             <textarea
-                                name="message"
+                                name="msg"
                                 value={msg}
                                 rows= "4"
                                 className={ msgErr ? "form-control-alert" : null }
