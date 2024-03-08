@@ -4,3 +4,16 @@
 
 $font-base: 'Montserrat', sans-serif;
 $accent-color: rgb(212, 191, 0);
+
+h1 {
+  font-size: 2em;
+  font-family: $font-base, sans-serif;
+  font-weight:600;
+  text-align: center;
+}
+
+@media(max-width: 480px) {
+  h1 {
+    font-size: 1.4em;
+  }
+}

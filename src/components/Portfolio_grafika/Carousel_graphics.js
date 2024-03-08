@@ -47,18 +47,19 @@ const Carousel_graphics = ({listItems, isDesktop}) => {
                 }
                 {(listItems && !isDesktop) &&
                     <ul>
-                        {listItems.map((item) => {
+                        {listItems.map((item, index) => {
                             return <li key={item.id}>
                                 
                                 <div className="gallery-item-container">
-                                <span className="gallery-item-title">{item.title}</span>
+                                {/* <span className="gallery-item-title">{item.title}</span> */}
+                                {index === listItems.length - 1 && (<span className="gallery-item-title">{item.title}</span>)}
                                     <img
                                         className="gallery-img"
                                         src={item.url}
                                         alt={item.title}
                                         />
                                     
-                                    <hr/>
+                                    {/* <hr/> */}
 
                                 </div>
                             </li>

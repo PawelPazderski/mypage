@@ -145,7 +145,7 @@ const Contact = () => {
             <Success />
             :
             <form ref={form} className="contact-form" onSubmit={sendEmail}>
-                        <h2>Napisz do mnie</h2>
+                        <h1>Napisz do mnie</h1>
                         <label>Imię</label>
                             <input
                                 name="name"

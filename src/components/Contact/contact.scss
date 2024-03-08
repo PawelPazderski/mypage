@@ -1,13 +1,5 @@
 @import "../../scss/settings/variables";
 
-
-h1 {
-    font-size: 2em;
-    font-family: $font-base, sans-serif;
-    font-weight:600;
-    text-align: center;
-}
-
 .contact-container {
     margin: 0 auto;
     height: fit-content;
@@ -45,6 +37,18 @@ h1 {
         }
     }
     
+}
+
+@media(max-width: 960px) {
+    .contact-container {
+        width: 70%;
+    }
+}
+
+@media(max-width: 480px) {
+    .contact-container {
+        width: 90%;
+    }
 }
 
 .contact-form {
