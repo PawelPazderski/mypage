@@ -34,7 +34,7 @@ p {
     }
     .home-container-text {
         text-align: center;
-        width: 70%;
+        width: 65%;
     }
     
 }
@@ -62,8 +62,13 @@ p {
 
 @media(max-width: 960px) {
     .home-container .home-container-text {
-        width: 85%;
+        width: 90%;
         font-size: 14px;
+    }
+    .home-container .home-container-foto {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 1.2em;
     }
     h1 {
         margin-bottom: 0.5em;
