@@ -44,7 +44,7 @@ const Portfolio_grafika = () => {
     return (
         <>
         <div className='portfolio-grafika-container'>
-            <h2>Grafika</h2>
+            <h1>Grafika</h1>
             <div>
             <Carousel_graphics listItems={listItems} isDesktop={isDesktop}/>
             </div>

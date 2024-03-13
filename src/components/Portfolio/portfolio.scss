@@ -1,8 +1,7 @@
 @import "../../scss/settings/variables";
 
 .portfolio-container {
-    // padding-top: 40px;
-    height: 75vh;
+    flex: 1;
     .portfolio-links {
         display: flex;
         justify-content: center;
@@ -16,15 +15,15 @@
     width: 300px;
     height: 35vh;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
     padding: 0.5em;
     color: rgba(255, 255, 255, 0.637);
     text-decoration: none;
     font-size: 2em;
     margin: 0px 10px 0px 10px;
-    opacity: 0.5;
-    text-align: right;
+    opacity: 0.7;
+    text-align: center;
     &:hover {
         transform: scale(1.05);
         color: rgb(255, 255, 255);
@@ -35,25 +34,23 @@
 
 .portfolio-link-grafika {
     background-color: $accent-color;
-    background: url("PP-icon.png") no-repeat  top/contain, $accent-color;
+    // background: url("PP-icon.png") no-repeat  top/contain, $accent-color;
     // background: url("grafika.jpg") no-repeat center/cover;
 }
 .portfolio-link-developer {
     background-color: $accent-color;
-    background: url("React-icon-white.png") no-repeat top/contain, $accent-color;
+    // background: url("React-icon-white.png") no-repeat top/contain, $accent-color;
     // background: url("developer_2.jpg") no-repeat center/cover;
 }
 
 @media (max-width: 960px) {
-    .portfolio-container {
-        height: fit-content;
-    }
     .portfolio-links {
         flex-direction: column;
         align-items: center;
         .portfolio-link {
-            height: 35vh;
-            width: 60vw;
+            font-size: 1.5em;
+            height: 25vh;
+            width: 50vw;
             margin: 10px 0px 10px 0px;
         }
     }

@@ -1,10 +1,15 @@
 .home-footer {
+    max-width: 1200px;
     font-size: small;
     color: darkgrey;
     border-top: 1px solid lightgrey;
     padding-top: 1em;
     text-align: center;
     margin-bottom: 25px;
+    margin: 0 auto;
+    position: relative;
+    bottom: 0;
+    width: 100%;
     p:before {
         content:"\00a9";
         margin-right: 3px;
@@ -12,12 +17,12 @@
   
 }
 
-@media(min-width: 960px) and (min-height: 920px) {
-  .home-footer {
-    margin: 0 auto;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    max-width: 1200px;
-  }
-}
+// @media(min-width: 960px) and (min-height: 920px) {
+//   .home-footer {
+//     margin: 0 auto;
+//     position: fixed;
+//     bottom: 0;
+//     width: 100%;
+//     max-width: 1200px;
+//   }
+// }

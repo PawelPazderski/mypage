@@ -35,7 +35,7 @@ const Portfolio_react = () => {
     return (
         <>
         <div className='portfolio-react-container'>
-            <h2>React</h2>
+            <h1>Frontend</h1>
             <div className='react-images'>
             {(reactItems && isDesktop) 
             &&

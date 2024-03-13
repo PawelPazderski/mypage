@@ -136,5 +136,19 @@
         width: 5em;
         height: 2em;
         font-size: 2em;
-        font-weight: 600;
+        // font-weight: 600;
+    }
+
+    @media (max-width: 480px) {
+        .top-nav {
+            padding-top: 1em;
+            padding-bottom: 1em;
+            .menu {
+                top: 31px
+            }
+        }
+        .nav-logo {
+            font-size: 1.5em;
+        }
+        
     }
