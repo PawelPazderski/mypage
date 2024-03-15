@@ -40,7 +40,6 @@ const Portfolio_grafika = () => {
             });
     }, [])
 
-
     return (
         <>
         <div className='portfolio-grafika-container'>

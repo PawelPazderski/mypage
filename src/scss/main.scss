@@ -1,6 +1,5 @@
 @import 'config/reset';
 @import 'settings/variables';
-
 @import "~bootstrap/scss/bootstrap";
 
 
@@ -25,8 +24,12 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background: url("./../splash_20.jpg") no-repeat center/cover;
-    // display: flex;
-    // flex-direction: column;
+}
+
+@media(max-width: 960px) {
+    body {
+        background: url("./../splash_20_xs.jpg") no-repeat bottom/contain;
+    }
 }
 
 code {

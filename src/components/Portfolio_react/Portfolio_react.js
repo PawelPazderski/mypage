@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Spinner from 'react-bootstrap/Spinner'
+import ScrollButton from '../Portfolio/ScrollButton';
 import './portfolio_react.scss'
 
 import { getDatabase, ref, child, get } from "firebase/database";
@@ -43,6 +44,7 @@ const Portfolio_react = () => {
             }
             {(reactItems && !isDesktop) 
             &&
+            <>
             <ul>
                 {reactItems.map((item) => {
                     return <li key={item.id}>
@@ -67,6 +69,9 @@ const Portfolio_react = () => {
                             </li>
                         })}
                 </ul>
+                <ScrollButton />
+            </>
+            
             }
 
             {(!reactItems) &&
